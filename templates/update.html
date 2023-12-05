@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mywebsite</title>
+    <link rel="stylesheet" >
+  </head>
+  <body>
+    <form action="/doupdate/{{stu.id}}" method="post" enctype="multipart/form-data" >
+      {% csrf_token %}
+
+        <label for="your_name">Name </label>
+        <input id="your_name" type="text" name="name" placeholder = "Name" value={{stu.name}}>
+
+        <label for="your_name">Age </label>
+        <input id="your_name" type="Number" name="age" placeholder = "Age" value= {{stu.age}}>
+        
+        <label for="your_name">Mobile Number </label>
+        <input id="your_name" type="Number" name="mobile" placeholder = "mobile Number" value={{stu.mobile}}>
+        
+        <input type="file" id="image" name="image">
+        
+        <button type="submit"  value="Submit">Submit</button>
+    
+    
+    </form>
+	
+  </body>
+</html>
+
