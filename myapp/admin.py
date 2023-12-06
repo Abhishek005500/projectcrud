@@ -6,6 +6,5 @@ class StudentAdmin(admin.ModelAdmin):
     list_display = ['id','name','age','mobile','image']
     
 
-
 admin.site.register(Student,StudentAdmin)
 

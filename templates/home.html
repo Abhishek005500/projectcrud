@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +10,25 @@
     <title>Mywebsite</title>
     <link rel="stylesheet" >
   </head>
+  <a href="/logout/" > <button type="submit"  value="Submit">Logout</button></a>
+
   <body>
+
     <form action="" method="post" enctype="multipart/form-data">
       {% csrf_token %}
 
         <label for="your_name">Name </label>
-        <input id="your_name" type="text" name="name" placeholder = "Name">
+        <input id="your_name" type="text" name="name" placeholder = "Name"><br>
 
         <label for="your_age">Age </label>
-        <input id="your_name" type="Number" name="age" placeholder = "Age">
+        <input id="your_name" type="Number" name="age" placeholder = "Age"><br>
         
         <label for="your_mobilenumber"> Mobile Number </label>
-        <input id="your_name" type="Number" name="mobile" placeholder = "mobile Number">
+        <input id="your_name" type="Number" name="mobile" placeholder = "mobile Number"><br>
         
-        <input type="file" id="image" name="image">
+        <input type="file" id="image" name="image"><br>
         
-        <button type="submit"  value="Submit">Submit</button>
+        <button type="submit"  value="Submit">Submit</button><br>
     
     
     </form>

@@ -1,18 +1,24 @@
 from django.shortcuts import render,redirect
 from .models import Student
+from django.contrib.auth import authenticate, login ,logout
+from django. contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse 
+
+from django.contrib.auth.models import User
 
 # Create your views here.
-
-
+@login_required(login_url="/login/")
 def home(request):
     if request.method == "POST":
         name = request.POST.get("name")
         age = request.POST.get("age")
         mobile = request.POST.get("mobile")
         image = request.FILES.get("image")
+        faculty = request.user.id
         
         print(image)
-        stu  = Student.objects.create(name = name,age = age, mobile=mobile, image=image)
+        stu  = Student.objects.create(faculty_id=faculty,name = name,age = age, mobile=mobile, image=image)
         Student.save(stu)
         
         return redirect("/")
@@ -59,3 +65,54 @@ def delete(request,id):
         
     return redirect("/")
    
+def login_page(request):
+    return render(request, "login.html")
+
+   
+def register_page(request):
+    return render(request, "register.html")
+
+
+def register(request):
+    if request.method == "POST":
+        firstname = request.POST.get("firstname")
+        lastname = request.POST.get("lastname")
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        print(username,password)
+        user =  User.objects.create(first_name=firstname,last_name=lastname,username=username)
+        print(user)
+        user.set_password(password)
+        user.save()
+        
+        return redirect("/login/")
+    return render(request,"register.html")
+
+
+
+def login_view(request):
+    if request.method =="POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        print(username,password)
+        
+
+
+
+        user = authenticate( username=username, password=password)
+        
+        print(user)
+        if user is None:
+            messages.error(request,"Invalid username or password")
+            
+        else:
+            login(request, user)
+            return redirect("/")
+            
+    return render(request,"login.html")
+
+    
+def logout_view(request):
+    logout(request)
+    return redirect("/login/")
+        

@@ -1,7 +1,7 @@
 
 from django.contrib import admin
-from django.urls import path
-from myapp  import views
+from django.urls import path,include
+from myapp import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -9,15 +9,11 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home,name="home"),
+    path('',include("myapp.urls")),
+    path('api/',include("myapp.api.urls")),
+    path('',include("healthapp.urls")),
+    
 
-    path('update/<int:id>', views.update,name="update"),
-    path('doupdate/<int:id>', views.doupdate,name="doupdate"),
-    
-    path('delete/<int:id>', views.delete,name="delete"),
-    
-    
-    
 ]
 
 if settings.DEBUG:

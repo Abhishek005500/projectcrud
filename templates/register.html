@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mywebsite</title>
+    <link rel="stylesheet" >
+  </head>
+  <body>
+    <form action="" method="post" >
+      {% csrf_token %}
+      <h2>Register</h2>
+       <div>
+        <label for="firstname">First Name</label>
+        <input id="firstname" type="text" name="firstname" placeholder = "username">
+        </div>  
+      <div>
+        <label for="lastname">Last Name </label>
+        <input id="lastname" type="text" name="lastname" placeholder = "username">
+        </div> 
+        <div>
+            <label for="username">Username </label>
+            <input id="username" type="text" name="username" placeholder = "username">
+            </div>    
+   
+        <div>   
+        <label for="password">Password </label>
+        <input id="password" type="text" name="password" placeholder = "password">
+         </div>
+        <p> Already have account <a href="/login/">Login</a></p>
+        
+        
+        <button type="submit"  value="Submit">Submit</button>
+    
+    
+    </form>
+
+    
+    
+	
+  </body>
+</html>
