@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp','bootstrap5',
     'rest_framework',
-    'healthapp',
+    'faculty',
 ]
 
 MIDDLEWARE = [

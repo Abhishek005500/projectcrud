@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Student
+from faculty.models import Faculty
 from django.contrib.auth import authenticate, login ,logout
 from django. contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -11,16 +12,20 @@ from django.contrib.auth.models import User
 @login_required(login_url="/login/")
 def home(request):
     if request.method == "POST":
+        userid = request.user.id
+        user_email = request.user.email
+        print(userid)
         name = request.POST.get("name")
         age = request.POST.get("age")
         mobile = request.POST.get("mobile")
         image = request.FILES.get("image")
-        faculty = request.user.id
         
-        print(image)
-        stu  = Student.objects.create(faculty_id=faculty,name = name,age = age, mobile=mobile, image=image)
-        Student.save(stu)
         
+        faculty = Faculty.objects.get(faculty = userid)
+        print(faculty)
+
+        stu  = Student.objects.create(faculty=faculty,name = name,age = age, mobile=mobile, image=image)
+        stu.save()
         return redirect("/")
     else:
         stu = Student.objects.all()
@@ -80,6 +85,8 @@ def register(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
         print(username,password)
+        
+        
         user =  User.objects.create(first_name=firstname,last_name=lastname,username=username)
         print(user)
         user.set_password(password)

@@ -7,11 +7,14 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("myapp.urls")),
-    path('api/',include("myapp.api.urls")),
-    path('',include("healthapp.urls")),
+    path('myapp/',include("myapp.urls")),
+    path('myapp/api/',include("myapp.api.urls")),
+    path('fac/',include("faculty.urls")),
+    path('fac/api/',include("faculty.api.urls")),
+    
     
 
 ]
