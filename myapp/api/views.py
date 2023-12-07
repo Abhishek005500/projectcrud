@@ -6,10 +6,15 @@ from rest_framework.decorators import APIView
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.exceptions import AuthenticationFailed
+from rest_framework.permissions import IsAuthenticated 
+
+
+
 
 # create a viewset
 
 class StudentView(APIView):
+    permission_classes = (IsAuthenticated, ) 
     def get(self, request, pk=None, format=None):
         id = pk
         if id is not None:
@@ -75,5 +80,4 @@ class StudentView(APIView):
             return Response(str(E),status = status.HTTP_400_BAD_REQUEST)
         
 
-        
-              
+            
