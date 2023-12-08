@@ -1,98 +1,65 @@
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mywebsite</title>
-    <link rel="stylesheet" >
-  </head>
-  <body>
-    <form action="/doupdate/{{stu.id}}" method="post" enctype="multipart/form-data" >
-      {% csrf_token %}
-
-        <label for="your_name">Name </label>
-        <input id="your_name" type="text" name="name" placeholder = "Name" value={{stu.name}}>
-
-        <label for="your_name">Age </label>
-        <input id="your_name" type="Number" name="age" placeholder = "Age" value= {{stu.age}}>
-        
-        <label for="your_name">Mobile Number </label>
-        <input id="your_name" type="Number" name="mobile" placeholder = "mobile Number" value={{stu.mobile}}>
-        
-        <input type="file" id="image" name="image">
-        
-        <button type="submit"  value="Submit">Submit</button>
-    
-    
-    </form>
-	
-  </body>
-</html> {% endcomment %}
-
-
 <!DOCTYPE html>
 <html>
+
 <head>
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
-<title>Student Update</title>
+  <title>Student Update</title>
 </head>
 
 <body>
   <section class="vh-100 bg-image"
-  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Update Student Information</h2>
+    style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Update Student Information</h2>
 
-              <form action="/student/doupdate/{{stu.id}}" method="post" enctype="multipart/form-data" >
-                {% csrf_token %}
+                <form action="/student/doupdate/{{stu.id}}" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" name = "name" value={{stu.name}} />
-                  <label class="form-label" for="form3Example1cg">First Name</label>
-                </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="name"
+                      value={{stu.name}} />
+                    <label class="form-label" for="form3Example1cg">First Name</label>
+                  </div>
 
-                <div class="form-outline mb-4">
-                  <input type="Number" id="form3Example3cg" class="form-control form-control-lg" name = "age" value={{stu.age}} />
-                  <label class="form-label" for="form3Example3cg">Age</label>
-                </div>
+                  <div class="form-outline mb-4">
+                    <input type="Number" id="form3Example3cg" class="form-control form-control-lg" name="age"
+                      value={{stu.age}} />
+                    <label class="form-label" for="form3Example3cg">Age</label>
+                  </div>
 
-                <div class="form-outline mb-4">
-                  <input type="Number" id="form3Example4cg" class="form-control form-control-lg" name="mobile" value={{stu.mobile}} />
-                  <label class="form-label" for="form3Example4cg">Mobile Number</label>
-                </div>
-                <input type="file" id="image" name="image">
-               
+                  <div class="form-outline mb-4">
+                    <input type="Number" id="form3Example4cg" class="form-control form-control-lg" name="mobile"
+                      value={{stu.mobile}} />
+                    <label class="form-label" for="form3Example4cg">Mobile Number</label>
+                  </div>
+                  <input type="file" id="image" name="image">
 
 
-                <div class="d-flex justify-content-center">
-                  <button type="submit" 
-                    class="btn btn-primary
+
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary
                      btn-block btn-lg gradient-custom-4 text-body">Update</button>
-                </div>
+                  </div>
 
-         
-                    
 
-              </form>
 
+
+                </form>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 </body>

@@ -1,202 +1,96 @@
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-    
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mywebsite</title>
-    <link rel="stylesheet" >
-  </head>
-  <body>
-    <form action="" method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      <h2>Login</h2>
-
-        <div>
-            <label for="your_name">Username </label>
-            <input id="your_name" type="text" name="username" placeholder = "username">
-            </div>
-             <div>   
-            <label for="your_password">Password </label>
-            <input id="your_password" type="Password" name="password" placeholder = "password">
-             </div>
-        <p> Don't have account <a href="/fac/register/">Register</a></p>
-        
-        <button type="submit"  value="Submit">Submit</button>
-    
-    
-    </form>
-
-    
-    
-	
-  </body>
-</html> {% endcomment %}
-
-
-
-<!-- Section: Design Block -->
- {% comment %} <!DOCTYPE html>
-<html lang="en">
-    
-  <head>
-{% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-<section class=" text-center text-lg-start">
-  <style>
-    .rounded-t-5 {
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-    }
-
-    @media (min-width: 992px) {
-      .rounded-tr-lg-0 {
-        border-top-right-radius: 0;
-      }
-
-      .rounded-bl-lg-5 {
-        border-bottom-left-radius: 0.5rem;
-      }
-    }
-  </style>
-  <div class="card mb-3">
-    <div class="row g-0 d-flex align-items-center">
-      <div class="col-lg-4 d-none d-lg-flex">
-        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
-          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
-      </div>
-      <div class="col-lg-8">
-        <div class="card-body py-5 px-md-5">
-
-          <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <h2>Login</h2>
-            <!-- Email input -->
-            <div>
-              <label for="your_name">Username </label>
-              <input id="your_name" type="text" name="username" placeholder = "username">
-              </div>
-
-            <!-- Password input -->
-            <div>   
-              <label for="your_password">Password </label>
-              <input id="your_password" type="Password" name="password" placeholder = "password">
-               </div>
-
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-              
-                <p> Don't have account <a href="/fac/register/">Register</a></p>
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-</head>
-</html>
-<!-- Section: Design Block --> {% endcomment %}
-
 <!DOCTYPE html>
 <html>
+
 <head>
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
-<title>Faculty Login</title>
+  <title>Faculty Login</title>
 </head>
 
 <body>
-<!-- Section: Design Block -->
-<section class="text-center text-lg-start">
-  <style>
-    .cascading-right {
-      margin-right: -50px;
-    }
-
-    @media (max-width: 991.98px) {
+  <!-- Section: Design Block -->
+  <section class="text-center text-lg-start">
+    <style>
       .cascading-right {
-        margin-right: 0;
+        margin-right: -50px;
       }
-    }
-  </style>
 
-  <!-- Jumbotron -->
-  <div class="container py-4">
-    <div class="row g-0 align-items-center">
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="card cascading-right" style="
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right" style="
             background: hsla(0, 0%, 100%, 0.55);
             backdrop-filter: blur(30px);
             ">
-          <div class="card-body p-5 shadow-5 text-center">
-            <h2 class="fw-bold mb-5">Login</h2>
-            <form action="" method="post" enctype="multipart/form-data">
-              {% csrf_token %}
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Login</h2>
+              <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
 
-              <!-- 2 column grid layout with text inputs for the first and last names -->
-              
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="text" id="form3Example3" class="form-control"  name = "username"/>
-                <label class="form-label" for="form3Example3">User name</label>
-              </div>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
 
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" name = "password"/>
-                <label class="form-label" for="form3Example4">Password</label>
-              </div>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example3" class="form-control" name="username" />
+                  <label class="form-label" for="form3Example3">User name</label>
+                </div>
 
-              
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4" class="form-control" name="password" />
+                  <label class="form-label" for="form3Example4">Password</label>
+                </div>
 
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4" value="submit">
-                Submit
-              </button>
-              <p> Don't have account <a href="/fac/register/">Register</a></p>
 
-              <!-- Register buttons -->
-              <div class="text-center">
-                
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-facebook-f"></i>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4" value="submit">
+                  Submit
                 </button>
+                <p> Don't have account <a href="/fac/register/">Register</a></p>
 
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-google"></i>
-                </button>
+                <!-- Register buttons -->
+                <div class="text-center">
 
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-twitter"></i>
-                </button>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
 
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-github"></i>
-                </button>
-              </div>
-            </form>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" class="w-100 rounded-4 shadow-4"
-          alt="" />
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
       </div>
     </div>
-  </div>
-  <!-- Jumbotron -->
-</section>
-<!-- Section: Design Block -->
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
 
 
 </body>

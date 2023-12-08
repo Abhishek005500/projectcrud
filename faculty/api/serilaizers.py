@@ -14,3 +14,6 @@ class FacultySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Faculty
         fields = ['id','faculty']
+        
+        
+        
