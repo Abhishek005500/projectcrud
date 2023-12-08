@@ -8,6 +8,9 @@ from django.http import HttpResponse
 
 from django.contrib.auth.models import User
 
+
+
+
 # Create your views here.
 @login_required(login_url="/fac/login/")
 def home(request):
@@ -28,13 +31,17 @@ def home(request):
         stu.save()
         return redirect("/student/")
     else:
-        stu = Student.objects.all()
+        print(request.user.id)
+        faculty = Faculty.objects.get(faculty = request.user.id )
+        print(faculty.id)
+        stu =  Student.objects.filter(faculty = faculty.id)
     
         return render(request,"home.html",{"stu":stu}) 
     return render(request,"home.html")
 
 
   
+ 
  
 
 

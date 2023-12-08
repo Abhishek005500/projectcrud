@@ -2,6 +2,10 @@ from django.urls import path
 # from .views import *
 from myapp import views
 
+
+
+
+
 urlpatterns = [
     
     path('', views.home,name="home"),
@@ -11,6 +15,6 @@ urlpatterns = [
     
     path('delete/<int:id>', views.delete,name="delete"),
     
-   
+ 
     
 ]
