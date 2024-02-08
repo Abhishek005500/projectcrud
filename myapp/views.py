@@ -42,25 +42,6 @@ def home(request):
     # return render(request, "home.html")
 
 
-def register(request):
-    if request.method == "POST":
-        firstname = request.POST.get("firstname")
-        lastname = request.POST.get("lastname")
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        print(username, password)
-
-        user = User.objects.create(
-            first_name=firstname, last_name=lastname, username=username
-        )
-        print(user)
-        user.set_password(password)
-        user.save()
-
-        return redirect("/fac/login/")
-    return render(request, "register.html")
-
-
 def update(request, id):
     stu = Student.objects.get(pk=id)
     return render(request, "update.html", {"stu": stu})
